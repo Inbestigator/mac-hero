@@ -46,7 +46,7 @@ export default function Text() {
         <span className="text-black">
           Apple Intelligence.<sup>1</sup>
         </span>{" "}
-        And with up to 18 hours of battery life,2 you can take the superportable
+        And with up to 18 hours of battery life,<sup>2</sup> you can take the superportable
         MacBook Air anywhere and blaze through whatever you&apos;re into.
       </motion.p>
 
