@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0.1);
 
   function scrollHandler() {
     if (!videoRef.current) return;
@@ -27,26 +27,33 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-[450dvh] max-w-[160rem] mx-auto">
-      <div className="sticky flex items-center justify-center top-0 h-dvh overflow-hidden">
-        <video
-          ref={videoRef}
-          src="https://www.apple.com/105/media/us/macbook-air/2024/abecf8fa-b944-4698-94ce-14616e166bff/anim/hero/large.webm"
-          playsInline
-          muted
-          aria-hidden
-          className="object-cover w-full h-full"
-        />
+    <div className="overflow-clip">
+      <div className="relative min-h-[450dvh] w-[160rem] left-1/2 -translate-x-1/2 overflow-clip">
+        <div className="sticky flex items-center justify-center top-0 h-dvh">
+          <video
+            ref={videoRef}
+            src="/large.webm"
+            playsInline
+            muted
+            aria-hidden
+          />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h1
-            className="text-[9rem] font-black"
-            style={{ opacity: 1 - progress * 35, scale: 1 - progress * 20 }}
-          >
-            MacBook Air
-          </h1>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h1
+              className="text-[9rem] font-black"
+              style={{ opacity: 1 - progress * 35, scale: 1 - progress * 20 }}
+            >
+              MacBook Air
+            </h1>
+          </div>
         </div>
       </div>
+      <div
+        className="3xl:hidden"
+        style={{
+          height: `${progress + 2 * 10}dvh`,
+        }}
+      />
     </div>
   );
 }
