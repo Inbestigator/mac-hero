@@ -30,9 +30,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <>
-      <div className="h-[500vh] sticky-container">
-        <div className="sticky flex flex-col items-center justify-center top-0 left-0 h-screen w-full overflow-hidden sticky-content">
+      <div className="h-[500vh] sticky-container mb-[70vh]">
+        <div className="sticky flex flex-col items-center justify-center top-0 left-0 h-screen w-full sticky-content">
           <div className="absolute size-full overflow-hidden flex items-center justify-center">
             <video
               ref={videoRef}
@@ -57,21 +56,19 @@ export default function Hero() {
               aria-hidden
             />
             <h1
-              className="text-[9rem] font-black absolute size-full flex justify-center items-center"
+              className="text-[9rem] font-black absolute"
               style={{ opacity: 1 - progress * 35, scale: 1 - progress * 20 }}
             >
               MacBook Air
             </h1>
           </div>
           <div
-            className="flex-col max-w-[60rem] gap-10 absolute top-[calc(100vh-300px)] hero-copy-wrapper"
+            className="flex-col max-w-[60rem] gap-10 absolute top-[80vh] hero-copy-wrapper"
             style={{ display: progress > 0.77 ? "flex" : "none" }}
           >
             <Text />
           </div>
         </div>
       </div>
-      <div className="h-[calc(50vh+300px)]" />
-    </>
   );
 }
