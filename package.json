@@ -1,7 +1,4 @@
 {
-  "name": "frames-sequence",
-  "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build --turbo",
